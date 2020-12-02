@@ -8,5 +8,6 @@ let db = require('./DBConnection').getConnection();
 
 app.get('/', (req, res)=>{
     res.status(200).send('HelloWorld!');
+};
 
 app.listen(port);
