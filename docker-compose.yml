@@ -1,0 +1,28 @@
+version: '3'
+services:
+  projetmongo:
+    container_name: projetmongo
+    image: node
+    ports:
+      - "19080:3000"
+    env_file:
+      - ./app/.env.dev
+    volumes:
+      - ./app:/usr/src/app
+      - ./app/node_modules:/usr/src/outside/node_modules
+    working_dir: /usr/src/app
+    command: bash -c 'npm i && npm run dev'
+    links:
+      - database
+  database:
+    image: 'mongo'
+    container_name: 'mongo-docker'
+    environment:
+      - MONGO_INITDB_DATABASE=firstmongodb
+      - MONGO_INITDB_USERNAME=root
+      - MONGO_INITDB_PASSWORD=root
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017-27019:27017-27019'

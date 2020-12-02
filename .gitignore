@@ -26,6 +26,9 @@ node_modules/
 *.ini
 test.js
 
+# database
+mongo-volume/
+
 # External tool builders
 .externalToolBuilders/
 
