@@ -10,3 +10,6 @@ db.createUser (
         ]
     }
 )
+
+db.createCollection("ptsInteret");
+db.createCollection("typeInteret");
