@@ -1,14 +1,14 @@
 {
-  "name": "commande",
+  "name": "gestiondonneemongodb",
   "version": "1.0.0",
   "description": "Services Nancy",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "dev-legacy": "nodemon --legacy-watch app.js"
   },
-  "author": "Alexandre Leroux <alex@sherpa.one> (https://sherpa.one)",
   "license": "UNLICENSED",
   "dependencies": {
     "express": "^4.17.1",
