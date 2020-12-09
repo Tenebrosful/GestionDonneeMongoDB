@@ -1,7 +1,7 @@
 db.createUser (
     {
-        user : "vgardel",
-        pwd : "vgardel",
+        user : "root",
+        pwd : "root",
         roles : [
             {
                 role : "readWrite",
@@ -13,3 +13,5 @@ db.createUser (
 
 db.createCollection("ptsInteret");
 db.createCollection("typeInteret");
+
+//require('./app/retrieveData.js').retrieveParkings();

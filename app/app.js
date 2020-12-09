@@ -10,6 +10,11 @@ app.get('/', (req, res)=>{
     res.status(200).send('HelloWorld!');
 });
 
+app.post('/retrieveParkings', function(req, res){
+    require('./retrieveData.js').retrieveParkings();
+    res.status(200).send("Data retrieved!");
+});
+
 /**
  * Erreur 400
  */
