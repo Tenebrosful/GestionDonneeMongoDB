@@ -4,14 +4,18 @@ const port=process.env.LOCAL_PORT;
 
 const db = require('./DBConnection');
 
+<<<<<<< HEAD
 const retrieveParkings = require("./retrieveData").retrieveParkings;
+=======
+const {retrieveParkings} = require("./retrieveData");
+>>>>>>> 312fbcea6e324f3ea1b93e8cfd9a9845fc05dccb
 
 app.get('/', (req, res)=>{
     res.status(200).send('HelloWorld!');
 });
 
-app.post('/retrieveParkings', function(req, res){
-    retrieveParkings();
+app.post('/retrieveParkings', async function(req, res){
+    await retrieveParkings();
     res.status(200).send("Data retrieved!");
 });
 
@@ -34,6 +38,10 @@ app.use(function (err, req, res, next) {
     });
 });
 
+<<<<<<< HEAD
 //setInterval(retrieveData, 300000);
+=======
+setInterval(retrieveParkings, 300000);
+>>>>>>> 312fbcea6e324f3ea1b93e8cfd9a9845fc05dccb
 
 app.listen(port);
