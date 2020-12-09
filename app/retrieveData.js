@@ -20,13 +20,8 @@ function updateParkings(data){
                 y: parking.y
             }
         };
-        
-        if(db.isConnected)
-            console.log("db is indeed connected");
-        else
-            return;
 
-        db.db(process.env.MONGO_INITDB_DATABASE).collection('ptsInteret').insertOne(myParking, (err, res)=>{
+        db.collection('ptsInteret').insertOne(myParking, (err, res)=>{
             if (err) throw err;
                 console.log("1 parking inserted");
         });
