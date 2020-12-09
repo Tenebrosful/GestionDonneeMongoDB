@@ -8,7 +8,7 @@ const dbName="firstmongodb";
  * @return {Db}
  */
 function getConnection() {
-    MongoClient.connect(url, function(err, client){
+    MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client){
     if(err)
         console.error(err);
     else
