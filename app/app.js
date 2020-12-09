@@ -2,7 +2,9 @@ const express = require('express');
 const app=express();
 const port=process.env.LOCAL_PORT;
 
-const db = require('./DBConnection').getConnection();
+const db = require('./DBConnection');
+
+const {retrieveData} = require("retrieveData");
 
 app.get('/', (req, res)=>{
     res.status(200).send('HelloWorld!');
@@ -26,5 +28,7 @@ app.use(function (err, req, res, next) {
         message: (process.env.NODE_ENV === "dev" ? err : "Erreur Serveur")
     });
 });
+
+setInterval(retrieveData, 300000);
 
 app.listen(port);
