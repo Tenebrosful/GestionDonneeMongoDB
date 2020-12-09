@@ -2,7 +2,7 @@ const express = require('express');
 const app=express();
 const port=process.env.LOCAL_PORT;
 
-const db = require('./DBConnection').db;
+const db = require('./DBConnection');
 
 app.get('/', (req, res)=>{
     res.status(200).send('HelloWorld!');
