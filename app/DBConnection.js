@@ -1,8 +1,6 @@
-const { Db } = require('mongodb');
-
 const MongoClient = require('mongodb').MongoClient;
 const url="mongodb://database";
-const dbName="firstmongodb";
+const dbName=process.env.MONGO_INITDB_DATABASE;//"firstmongodb";
 
 /**
  * @return {Db}
