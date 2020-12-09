@@ -2,10 +2,15 @@ const express = require('express');
 const app=express();
 const port=process.env.LOCAL_PORT;
 
-const db = require('./DBConnection').getConnection();
+const db = require('./DBConnection').db;
 
 app.get('/', (req, res)=>{
     res.status(200).send('HelloWorld!');
+});
+
+app.post('/retrieveParkings', function(req, res){
+    require('./retrieveData.js').retrieveParkings();
+    res.status(200).send("Data retrieved!");
 });
 
 /**
